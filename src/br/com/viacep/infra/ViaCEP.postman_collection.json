@@ -1,0 +1,102 @@
+{
+	"info": {
+		"_postman_id": "ed8807dd-06b9-4243-a92d-d21b63d2d755",
+		"name": "ViaCEP",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21348557"
+	},
+	"item": [
+		{
+			"name": "GET Endereço",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://viacep.com.br/ws/01001000/json/",
+					"protocol": "https",
+					"host": [
+						"viacep",
+						"com",
+						"br"
+					],
+					"path": [
+						"ws",
+						"01001000",
+						"json",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://viacep.com.br/ws/01001000/json/",
+							"protocol": "https",
+							"host": [
+								"viacep",
+								"com",
+								"br"
+							],
+							"path": [
+								"ws",
+								"01001000",
+								"json",
+								""
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\r\n    \"cep\": \"01001-000\",\r\n    \"logradouro\": \"Praça da Sé\",\r\n    \"complemento\": \"lado ímpar\",\r\n    \"bairro\": \"Sé\",\r\n    \"localidade\": \"São Paulo\",\r\n    \"uf\": \"SP\",\r\n    \"ibge\": \"3550308\",\r\n    \"gia\": \"1004\",\r\n    \"ddd\": \"11\",\r\n    \"siafi\": \"7107\"\r\n}"
+				},
+				{
+					"name": "400 Bad Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://viacep.com.br/ws/12345/json/",
+							"protocol": "https",
+							"host": [
+								"viacep",
+								"com",
+								"br"
+							],
+							"path": [
+								"ws",
+								"12345",
+								"json",
+								""
+							]
+						}
+					},
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/html",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "<!DOCTYPE HTML>\r\n<html lang=\"pt-br\">\r\n\r\n<head>\r\n\t<title>ViaCEP 400</title>\r\n\t<meta charset=\"utf-8\" />\r\n\t<style type=\"text/css\">\r\n\t\th1 {\r\n\t\t\tcolor: #555;\r\n\t\t\ttext-align: center;\r\n\t\t\tfont-size: 4em;\r\n\t\t}\r\n\r\n\t\th2,\r\n\t\th3 {\r\n\t\t\tcolor: #666;\r\n\t\t\ttext-align: center;\r\n\t\t\tfont-size: 3em;\r\n\t\t}\r\n\r\n\t\th3 {\r\n\t\t\tfont-size: 1.5em;\r\n\t\t}\r\n\t</style>\r\n</head>\r\n\r\n<body>\r\n\t<h1>Http 400</h1>\r\n\t<h3>Verifique a URL</h3>\r\n\t<h3>{Bad Request}</h3>\r\n</body>\r\n\r\n</html>"
+				}
+			]
+		}
+	]
+}
