@@ -22,13 +22,16 @@ public class ConsultaCep {
         try {
             response = httpClient.send(httpRequest, HttpResponse.BodyHandlers.ofString());
         } catch (Exception e) {
-            throw new RuntimeException(e.getMessage(),e.getCause());
+            throw new RuntimeException(e.getMessage(), e.getCause());
         }
 
         String resposta = response.body();
         System.out.println("resposta serviço: " + resposta);
 
-        Cep cepResposta = gson.fromJson(resposta, Cep.class);
-        return cepResposta;
+        if (!resposta.contains("Bad Request")) {
+            Cep cepResposta = gson.fromJson(resposta, Cep.class);
+            return cepResposta;
+        }
+        return null;
     }
 }
