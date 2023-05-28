@@ -11,14 +11,19 @@ import java.net.http.HttpResponse;
 
 public class ConsultaCep {
 
-    public Cep buscaCep(String cep) throws IOException, InterruptedException {
+    public Cep buscaCep(String cep) {
         Gson gson = new Gson();
         String url = "https://viacep.com.br/ws/" + cep + "/json/";
         System.out.println("endpoint: " + url);
 
         HttpClient httpClient = HttpClient.newHttpClient();
         HttpRequest httpRequest = HttpRequest.newBuilder().uri(URI.create(url)).build();
-        HttpResponse<String> response = httpClient.send(httpRequest, HttpResponse.BodyHandlers.ofString());
+        HttpResponse<String> response = null;
+        try {
+            response = httpClient.send(httpRequest, HttpResponse.BodyHandlers.ofString());
+        } catch (Exception e) {
+            throw new RuntimeException(e.getMessage(),e.getCause());
+        }
 
         String resposta = response.body();
         System.out.println("resposta serviço: " + resposta);
