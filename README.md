@@ -33,12 +33,17 @@ O projeto possui a seguinte estrutura de arquivos:
 
 ```bash
 └───src
+    └───main/java
     └───br
         └───com
             └───viacep
                 ├───infra
                 ├───model
                 └───service
+└── .gitignore
+└── 01001-000.json
+└── ViaCEP.postman_collection.json
+└── pom.xml
 ```
 
 - O pacote `br.com.viacep.service` contém a classe `ConsultaCep` que realiza a chamada à API Via CEP para obter os dados do CEP.
@@ -47,6 +52,9 @@ O projeto possui a seguinte estrutura de arquivos:
 - O pacote `br.com.viacep.infra` contém tambem o arquivo Postman 'ViaCEP.postman_collection.json' para consulta e exemlos de retornos na API.
 - A classe `Main` é a classe principal que inicia a aplicação e interage com o usuário.
 - O arquivo `.gitignore` especifica os arquivos e pastas que devem ser ignorados pelo controle de versão do Git.
+- O arquivo `01001-000.json` é gerado automaticamente com as informações do CEP buscado na API.
+- O arquivo `ViaCEP.postman_collection.json` é uma coleção do postman para consultas e exemlos de retornos da API Via CEP.
+- O arquivo `pom.xml` para download das dependencias necessarias para o projeto usando maven.
 
 ## Documentação
 
